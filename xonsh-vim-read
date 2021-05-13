@@ -1,0 +1,21 @@
+#!/usr/bin/env xonsh
+
+import argparse
+import re
+from textwrap import dedent
+
+argp = argparse.ArgumentParser(description=f"The xonsh shell wrapper to running the command via vim read.")
+argp.add_argument('-c', required=True, help="Command from vim")
+args = argp.parse_args()
+
+g = re.match('\((.+)\)>(.+) ', args.c)
+if g:
+    cmd = g.group(1)
+    tmp_file = g.group(2)
+    $COLOR_RESULTS=False
+    xonsh -c @(dedent(f"""
+        del aliases['ls']  # to remove colors from ls
+        {cmd}
+    """)) > @(tmp_file) 2>&1
+else:
+    print(f'Command not found: {args.c}')
