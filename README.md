@@ -11,7 +11,7 @@ echo 'set shell=$XDG_DATA_HOME/xonsh-vim-read/xonsh-vim-read' >> ~/.vimrc
 
 ## Usage
 
-```
+```python
 vim
 :read !2+2
 # 4
