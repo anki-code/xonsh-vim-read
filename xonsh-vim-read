@@ -18,4 +18,4 @@ if g:
         {cmd}
     """)) > @(tmp_file) 2>&1
 else:
-    print(f'Command not found: {args.c}')
+    print(f'xonsh-vim-read: Command not found: {args.c}')
