@@ -8,7 +8,7 @@ argp = argparse.ArgumentParser(description=f"The xonsh shell wrapper to running 
 argp.add_argument('-c', required=True, help="Command from vim")
 args = argp.parse_args()
 
-g = re.match('\((.+)\)>(.+) ', args.c)
+g = re.match('\((.+)\)\s*>\s*(.+?)( |$)', args.c)
 if g:
     cmd = g.group(1)
     tmp_file = g.group(2)
