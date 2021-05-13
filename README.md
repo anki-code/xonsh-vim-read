@@ -17,5 +17,9 @@ vim
 # 4
 ```
 
+## Known issues
+
+Tested only on Linux.
+
 ## Links 
 * This package was created with [xontrib cookiecutter template](https://github.com/xonsh/xontrib-cookiecutter).
